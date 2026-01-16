@@ -1,0 +1,10 @@
+<?php
+session_start();
+require_once("../db/databaseConnection.php");
+$id=mysql_real_escape_string($_GET['id']);
+
+		mysql_query("update   traveltbl   set 
+										status='rejected'  where   id='$id'");
+			header("location: ../travel_order.php");
+		
+?>
